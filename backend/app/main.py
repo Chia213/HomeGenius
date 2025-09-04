@@ -8,10 +8,15 @@ from app.core.config import settings
 from app.core.database import engine
 from app.models import property, user, ai_analysis as ai_models
 
-# Create database tables
-property.Base.metadata.create_all(bind=engine)
-user.Base.metadata.create_all(bind=engine)
-ai_models.Base.metadata.create_all(bind=engine)
+# Create database tables (with error handling)
+try:
+    property.Base.metadata.create_all(bind=engine)
+    user.Base.metadata.create_all(bind=engine)
+    ai_models.Base.metadata.create_all(bind=engine)
+    print("Database tables created successfully")
+except Exception as e:
+    print(f"Warning: Could not create database tables: {e}")
+    print("Server will start but database features may not work")
 
 app = FastAPI(
     title="HomeGenius API",
