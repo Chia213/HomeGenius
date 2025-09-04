@@ -61,7 +61,7 @@ frontend/dist/
 *.h5
 *.pth
 *.pt
-models/
+ai_models/models/
 checkpoints/
 
 # Logs
