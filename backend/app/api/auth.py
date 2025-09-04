@@ -9,7 +9,6 @@ from app.core.database import get_db
 from app.core.config import settings
 from app.models.user import User
 from app.schemas.user import UserCreate, UserResponse, Token
-from app.services.auth_service import AuthService
 
 router = APIRouter()
 
