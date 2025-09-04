@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { Search, User, LogOut, Home, Brain, Menu, X } from 'lucide-react';
+import LanguageSelector from './LanguageSelector';
 
 const Navbar: React.FC = () => {
   const { user, logout } = useAuth();
@@ -47,6 +48,8 @@ const Navbar: React.FC = () => {
               <Brain className="h-4 w-4" />
               <span>AI Analysis</span>
             </Link>
+
+            <LanguageSelector />
 
             {user ? (
               <div className="flex items-center space-x-4">

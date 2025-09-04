@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Property } from '../types';
 import { MapPin, Bed, Bath, Square, Star } from 'lucide-react';
+import { useLocale } from '../contexts/LocaleContext';
+import { formatPrice, formatArea, getLocalizedText } from '../utils/localization';
 
 interface PropertyCardProps {
   property: Property;
@@ -10,17 +12,7 @@ interface PropertyCardProps {
 }
 
 const PropertyCard: React.FC<PropertyCardProps> = ({ property, showAI = false, aiAnalysis }) => {
-  const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('sv-SE', {
-      style: 'currency',
-      currency: 'SEK',
-      minimumFractionDigits: 0,
-    }).format(price);
-  };
-
-  const formatArea = (area: number) => {
-    return `${area} m²`;
-  };
+  const { currentLocale } = useLocale();
 
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
@@ -53,7 +45,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property, showAI = false, a
             {property.title}
           </h3>
           <span className="text-lg font-bold text-blue-600">
-            {formatPrice(property.price)}
+            {formatPrice(property.price, currentLocale)}
           </span>
         </div>
 
@@ -70,25 +62,25 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property, showAI = false, a
           {property.rooms && (
             <div className="flex items-center">
               <Bed className="h-4 w-4 mr-1" />
-              <span>{property.rooms} rum</span>
+              <span>{property.rooms} {getLocalizedText('rooms', currentLocale)}</span>
             </div>
           )}
           {property.bedrooms && (
             <div className="flex items-center">
               <span className="mr-1">🛏️</span>
-              <span>{property.bedrooms} sovrum</span>
+              <span>{property.bedrooms} {getLocalizedText('bedrooms', currentLocale)}</span>
             </div>
           )}
           {property.bathrooms && (
             <div className="flex items-center">
               <Bath className="h-4 w-4 mr-1" />
-              <span>{property.bathrooms} badrum</span>
+              <span>{property.bathrooms} {getLocalizedText('bathrooms', currentLocale)}</span>
             </div>
           )}
           {property.area && (
             <div className="flex items-center">
               <Square className="h-4 w-4 mr-1" />
-              <span>{formatArea(property.area)}</span>
+              <span>{formatArea(property.area, currentLocale)}</span>
             </div>
           )}
         </div>
@@ -100,7 +92,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property, showAI = false, a
               <div className="text-sm">
                 <span className="font-medium text-blue-800">Predicted Price: </span>
                 <span className="text-blue-600">
-                  {formatPrice(aiAnalysis.predicted_price)}
+                  {formatPrice(aiAnalysis.predicted_price, currentLocale)}
                 </span>
                 {aiAnalysis.price_confidence && (
                   <span className="text-gray-600 ml-2">
