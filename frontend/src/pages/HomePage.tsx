@@ -25,128 +25,312 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-      {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-blue-600 via-purple-700 to-indigo-800 dark:from-gray-900 dark:via-blue-900 dark:to-purple-900 text-white overflow-hidden">
-        {/* Animated background elements */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 dark:from-blue-400/10 dark:to-purple-400/10"></div>
-        <div className="absolute top-10 left-10 w-20 h-20 bg-yellow-300/20 rounded-full animate-bounce-slow"></div>
-        <div className="absolute top-32 right-20 w-16 h-16 bg-blue-300/20 rounded-full animate-pulse-slow"></div>
-        <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-purple-300/20 rounded-full animate-bounce-slow delay-1000"></div>
+      {/* Hero Section - Luxury Presence Style */}
+      <div className="relative bg-white dark:bg-gray-900 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
         
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="text-center animate-fade-in">
-            <div className="inline-flex items-center px-4 py-2 bg-white/10 dark:bg-gray-800/30 backdrop-blur-sm rounded-full text-sm font-medium mb-6 animate-slide-up">
-              <Sparkles className="h-4 w-4 mr-2 text-yellow-300" />
-              Powered by Advanced AI Technology
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+          <div className="text-center max-w-4xl mx-auto">
+            {/* Social Proof Badge */}
+            <div className="inline-flex items-center px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 mb-8">
+              <Star className="h-4 w-4 mr-2 text-yellow-500" />
+              Trusted by 30% of Sweden's Top Real Estate Agents
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-slide-up">
-              Find Your Dream Home with
-              <span className="block bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent animate-pulse-slow">
-                AI Intelligence
-              </span>
+
+            {/* Main Headline */}
+            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-8 leading-tight">
+              The AI platform to grow your
+              <span className="block text-blue-600 dark:text-blue-400">real estate business</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed animate-slide-up">
-              Discover properties with AI-powered price predictions, style analysis, and personalized recommendations that understand your unique preferences
+            
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+              Launch a stunning property platform, attract more leads, and deliver five-star experiences with the modern AI-powered platform top producers rely on to turn prospects into lifelong clients.
             </p>
 
-            {/* Search Bar */}
-            <form onSubmit={handleSearch} className="max-w-3xl mx-auto animate-slide-up">
-              <div className="flex flex-col sm:flex-row gap-4">
-                <div className="flex-1 relative group">
-                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500 h-5 w-5 group-focus-within:text-blue-500 transition-colors duration-200" />
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+              <Link
+                to="/search"
+                className="bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors duration-200 text-lg"
+              >
+                Get Started
+              </Link>
+              <Link
+                to="/ai-analysis"
+                className="border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-colors duration-200 text-lg"
+              >
+                Tour Our Platform
+              </Link>
+            </div>
+
+            {/* Enhanced Search Section */}
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 max-w-6xl mx-auto border border-gray-200 dark:border-gray-700">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+                Find Your Perfect Property
+              </h3>
+              
+              <form onSubmit={handleSearch} className="space-y-6">
+                {/* Main Search Bar */}
+                <div className="relative">
+                  <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 text-gray-400 h-6 w-6" />
                   <input
                     type="text"
-                    placeholder="Search for properties, locations, or styles..."
+                    placeholder="Search by location, property type, or keywords..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-12 pr-4 py-4 rounded-xl text-gray-900 dark:text-white bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 focus:outline-none focus:ring-2 focus:ring-yellow-300 dark:focus:ring-blue-400 focus:border-transparent shadow-lg transition-all duration-200 placeholder-gray-500 dark:placeholder-gray-400"
+                    className="w-full pl-16 pr-6 py-5 text-lg border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                   />
                 </div>
-                <button
-                  type="submit"
-                  className="bg-gradient-to-r from-yellow-400 to-orange-400 dark:from-yellow-500 dark:to-orange-500 text-gray-900 dark:text-white px-8 py-4 rounded-xl font-semibold hover:from-yellow-300 hover:to-orange-300 dark:hover:from-yellow-400 dark:hover:to-orange-400 transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
-                >
-                  Search
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </button>
-              </div>
-            </form>
+
+                {/* Quick Filters */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <select className="px-4 py-4 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white font-medium">
+                    <option>Property Type</option>
+                    <option>Apartment</option>
+                    <option>House</option>
+                    <option>Condo</option>
+                    <option>Townhouse</option>
+                  </select>
+                  
+                  <select className="px-4 py-4 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white font-medium">
+                    <option>Price Range</option>
+                    <option>Under 500k</option>
+                    <option>500k - 1M</option>
+                    <option>1M - 2M</option>
+                    <option>Over 2M</option>
+                  </select>
+                  
+                  <select className="px-4 py-4 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white font-medium">
+                    <option>Rooms</option>
+                    <option>1+ rooms</option>
+                    <option>2+ rooms</option>
+                    <option>3+ rooms</option>
+                    <option>4+ rooms</option>
+                  </select>
+                  
+                  <button
+                    type="submit"
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center text-lg"
+                  >
+                    Search Properties
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </button>
+                </div>
+
+                {/* Popular Searches */}
+                <div className="flex flex-wrap gap-3 justify-center pt-4">
+                  <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">Popular searches:</span>
+                  {['Stockholm', 'Gothenburg', 'Malmö', 'Uppsala', 'Västerås'].map((city) => (
+                    <button
+                      key={city}
+                      type="button"
+                      onClick={() => setSearchQuery(city)}
+                      className="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200"
+                    >
+                      {city}
+                    </button>
+                  ))}
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Features Section */}
-      <div className="py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
+      {/* Testimonials Section - Luxury Presence Style */}
+      <div className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in">
-            <div className="inline-flex items-center px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm font-medium mb-6">
-              <Zap className="h-4 w-4 mr-2" />
-              Advanced AI Technology
-            </div>
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-              Powered by Advanced AI
+              Trusted by Sweden's Top Real Estate Professionals
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Experience the future of real estate with intelligent analysis and recommendations that revolutionize how you find your perfect home
+              See how leading agents and teams are using HomeGenius to grow their business and deliver exceptional results
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="group text-center p-8 bg-white dark:bg-gray-700 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up">
-              <div className="bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900/50 dark:to-blue-800/50 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <TrendingUp className="h-10 w-10 text-blue-600 dark:text-blue-400" />
+          {/* Testimonials Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold text-lg">AM</span>
+                </div>
+                <div>
+                  <h4 className="font-bold text-gray-900 dark:text-white">Anna Magnusson</h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">#1 Agent in Stockholm</p>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                Price Prediction
+              <p className="text-gray-700 dark:text-gray-300 italic mb-4">
+                "HomeGenius was the #1 reason for my record-breaking year. My clients are always telling me that they found me from my website. It's very important that you're out there and can be seen."
+              </p>
+              <div className="flex text-yellow-500">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-current" />
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-green-600 dark:text-green-400 font-bold text-lg">EL</span>
+                </div>
+                <div>
+                  <h4 className="font-bold text-gray-900 dark:text-white">Erik Larsson</h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Top Team in Gothenburg</p>
+                </div>
+              </div>
+              <p className="text-gray-700 dark:text-gray-300 italic mb-4">
+                "Success in the luxury market comes down to great branding and marketing. HomeGenius builds some of the best platforms in the industry and is a trusted partner for many top agents."
+              </p>
+              <div className="flex text-yellow-500">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-current" />
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold text-lg">MN</span>
+                </div>
+                <div>
+                  <h4 className="font-bold text-gray-900 dark:text-white">Maria Nilsson</h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">#1 Team in Malmö</p>
+                </div>
+              </div>
+              <p className="text-gray-700 dark:text-gray-300 italic mb-4">
+                "Working with HomeGenius was the most seamless experience I've ever had creating a platform, and it offered far more depth for our clients than we've ever had before."
+              </p>
+              <div className="flex text-yellow-500">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-current" />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Stats Section */}
+          <div className="bg-white dark:bg-gray-900 rounded-2xl p-12 shadow-lg border border-gray-200 dark:border-gray-700">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                We drive more growth and ROI for our customers
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                Get accurate price predictions based on comprehensive market analysis, property features, and real-time market trends
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-blue-600 dark:text-blue-400 mb-2">$300B</div>
+                <div className="text-gray-600 dark:text-gray-300 font-medium">Transaction volume closed by our customers</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-green-600 dark:text-green-400 mb-2">40,000</div>
+                <div className="text-gray-600 dark:text-gray-300 font-medium">Active websites managed on our platform</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-purple-600 dark:text-purple-400 mb-2">2x</div>
+                <div className="text-gray-600 dark:text-gray-300 font-medium">Our clients grow twice as fast as their peers</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-orange-600 dark:text-orange-400 mb-2">4x</div>
+                <div className="text-gray-600 dark:text-gray-300 font-medium">Sales volume of HomeGenius agents vs others</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Features Section - Luxury Presence Style */}
+      <div className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+              The growth platform to fuel your real estate success
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Build your brand, scale your business, and amaze your clients with our comprehensive AI-powered platform
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-12 mb-20">
+            <div className="text-center">
+              <div className="bg-gray-100 dark:bg-gray-800 w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-8">
+                <Home className="h-12 w-12 text-gray-900 dark:text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                Build your brand
+              </h3>
+              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                Establish a memorable brand that resonates with your ideal clients, showcases your unique value, and sets you apart from the competition.
               </p>
             </div>
 
-            <div className="group text-center p-8 bg-white dark:bg-gray-700 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up delay-100">
-              <div className="bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-900/50 dark:to-purple-800/50 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Brain className="h-10 w-10 text-purple-600 dark:text-purple-400" />
+            <div className="text-center">
+              <div className="bg-gray-100 dark:bg-gray-800 w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-8">
+                <TrendingUp className="h-12 w-12 text-gray-900 dark:text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                Style Analysis
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                Scale your business
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                Identify interior and architectural styles from images using cutting-edge computer vision technology and AI
+              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                Accelerate your growth with innovative tools and solutions that generate leads, engage clients, and nurture lasting relationships.
               </p>
             </div>
 
-            <div className="group text-center p-8 bg-white dark:bg-gray-700 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up delay-200">
-              <div className="bg-gradient-to-br from-green-100 to-green-200 dark:from-green-900/50 dark:to-green-800/50 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Star className="h-10 w-10 text-green-600 dark:text-green-400" />
+            <div className="text-center">
+              <div className="bg-gray-100 dark:bg-gray-800 w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-8">
+                <Star className="h-12 w-12 text-gray-900 dark:text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                Smart Recommendations
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                Amaze your clients
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                Receive personalized property recommendations based on your preferences, behavior, and lifestyle patterns
+              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                Deliver seamless, elevated experiences that ensure your clients feel valued, informed, and impressed at every interaction.
               </p>
             </div>
           </div>
 
-          {/* Additional Features */}
-          <div className="mt-16 grid md:grid-cols-2 gap-8">
-            <div className="flex items-center p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-700 dark:to-gray-600 rounded-xl">
-              <div className="bg-blue-100 dark:bg-blue-900/50 w-12 h-12 rounded-lg flex items-center justify-center mr-4">
-                <Home className="h-6 w-6 text-blue-600 dark:text-blue-400" />
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 dark:text-white">Property Matching</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-300">AI-powered matching algorithm</p>
-              </div>
+          {/* Additional Features Grid */}
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-3xl p-12">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                Smart solutions for agents, teams, and brokerages
+              </h3>
             </div>
-            <div className="flex items-center p-6 bg-gradient-to-r from-green-50 to-blue-50 dark:from-gray-700 dark:to-gray-600 rounded-xl">
-              <div className="bg-green-100 dark:bg-green-900/50 w-12 h-12 rounded-lg flex items-center justify-center mr-4">
-                <Shield className="h-6 w-6 text-green-600 dark:text-green-400" />
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="text-center p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700">
+                <div className="bg-blue-100 dark:bg-blue-900/30 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Brain className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+                </div>
+                <h4 className="font-bold text-gray-900 dark:text-white mb-2">Solo agents</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">Make your mark on the market</p>
               </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 dark:text-white">Secure & Reliable</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-300">Bank-level security for all data</p>
+              
+              <div className="text-center p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700">
+                <div className="bg-purple-100 dark:bg-purple-900/30 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Star className="h-8 w-8 text-purple-600 dark:text-purple-400" />
+                </div>
+                <h4 className="font-bold text-gray-900 dark:text-white mb-2">Celebrity agents</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">Keep the spotlight on your brand</p>
+              </div>
+              
+              <div className="text-center p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700">
+                <div className="bg-green-100 dark:bg-green-900/30 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <TrendingUp className="h-8 w-8 text-green-600 dark:text-green-400" />
+                </div>
+                <h4 className="font-bold text-gray-900 dark:text-white mb-2">Growing teams</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">Accelerate your team's growth</p>
+              </div>
+              
+              <div className="text-center p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700">
+                <div className="bg-orange-100 dark:bg-orange-900/30 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Shield className="h-8 w-8 text-orange-600 dark:text-orange-400" />
+                </div>
+                <h4 className="font-bold text-gray-900 dark:text-white mb-2">Brokerages</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">Command your brand at scale</p>
               </div>
             </div>
           </div>
@@ -157,21 +341,37 @@ const HomePage: React.FC = () => {
       <div className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12">
-            <div className="animate-fade-in">
+            <div>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
                 Featured Properties
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300">
-                Discover our handpicked selection of premium properties
+                Handpicked premium properties with AI-powered insights
               </p>
             </div>
             <Link
               to="/search"
-              className="mt-6 sm:mt-0 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
+              className="mt-6 sm:mt-0 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200 flex items-center"
             >
               View All Properties
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
+          </div>
+
+          {/* Property Type Tabs */}
+          <div className="flex flex-wrap gap-2 mb-8">
+            {['All', 'Apartments', 'Houses', 'Condos', 'Townhouses'].map((type) => (
+              <button
+                key={type}
+                className={`px-4 py-2 rounded-lg font-medium transition-colors duration-200 ${
+                  type === 'All' 
+                    ? 'bg-blue-600 text-white' 
+                    : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                }`}
+              >
+                {type}
+              </button>
+            ))}
           </div>
 
           {loading ? (
@@ -211,35 +411,27 @@ const HomePage: React.FC = () => {
 
       {/* CTA Section */}
       {!user && (
-        <div className="py-20 bg-gradient-to-br from-blue-600 via-purple-700 to-indigo-800 dark:from-gray-900 dark:via-blue-900 dark:to-purple-900 relative overflow-hidden">
-          {/* Background decorations */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 dark:from-blue-400/10 dark:to-purple-400/10"></div>
-          <div className="absolute top-0 left-0 w-full h-full opacity-20" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }}></div>
-          
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="animate-fade-in">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Ready to Find Your Perfect Home?
-              </h2>
-              <p className="text-xl text-blue-100 dark:text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-                Join thousands of users who have found their dream properties with AI assistance. Start your journey today!
-              </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Link
-                  to="/register"
-                  className="bg-white text-blue-600 px-10 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
-                >
-                  Get Started Free
-                </Link>
-                <Link
-                  to="/search"
-                  className="border-2 border-white text-white px-10 py-4 rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
-                >
-                  Browse Properties
-                </Link>
-              </div>
+        <div className="py-20 bg-blue-600 dark:bg-blue-800">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Start Your Property Search Today
+            </h2>
+            <p className="text-xl text-blue-100 mb-10 max-w-3xl mx-auto">
+              Join thousands of users who found their perfect home with our AI-powered platform
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Link
+                to="/register"
+                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
+              >
+                Create Free Account
+              </Link>
+              <Link
+                to="/search"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-200"
+              >
+                Browse Properties
+              </Link>
             </div>
           </div>
         </div>
