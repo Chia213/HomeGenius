@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { aiApi } from '../services/api.ts';
+import { aiApi } from '../services/api';
 import { Brain, Upload, Image, TrendingUp, Star, Loader } from 'lucide-react';
 
 const AIAnalysis: React.FC = () => {

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { useProperties } from '../contexts/PropertyContext.tsx';
-import { aiApi } from '../services/api.ts';
-import { Property, AIAnalysis } from '../types/index.ts';
+import { useProperties } from '../contexts/PropertyContext';
+import { aiApi } from '../services/api';
+import { Property, AIAnalysis } from '../types/index';
 import { MapPin, Bed, Bath, Square, Calendar, ArrowLeft, Brain, TrendingUp, Star } from 'lucide-react';
 
 const PropertyDetail: React.FC = () => {
@@ -103,7 +103,7 @@ const PropertyDetail: React.FC = () => {
                     alt={property.title}
                     className="w-full h-64 md:h-80 object-cover"
                   />
-                  {property.images.slice(1, 3).map((image, index) => (
+                  {property.images.slice(1, 3).map((image: string, index: number) => (
                     <img
                       key={index}
                       src={image}
@@ -273,7 +273,7 @@ const PropertyDetail: React.FC = () => {
                         Style Analysis
                       </h3>
                       <div className="flex flex-wrap gap-2">
-                        {aiAnalysis.detected_styles.map((style, index) => (
+                        {aiAnalysis.detected_styles.map((style: any, index: number) => (
                           <span
                             key={index}
                             className="bg-purple-200 text-purple-800 px-3 py-1 rounded-full text-sm font-medium"

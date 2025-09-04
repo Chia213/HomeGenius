@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { Property, PropertySearchParams, PropertyResponse } from '../types/index.ts';
-import { propertyApi } from '../services/api.ts';
+import { Property, PropertySearchParams, PropertyResponse } from '../types/index';
+import { propertyApi } from '../services/api';
 
 interface PropertyContextType {
   properties: Property[];

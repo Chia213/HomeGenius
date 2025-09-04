@@ -3,7 +3,7 @@ from typing import List
 
 class Settings(BaseSettings):
     # Database
-    DATABASE_URL: str = "postgresql://user:password@localhost/homegenius"
+    DATABASE_URL: str = "sqlite:///./homegenius.db"
     
     # Security
     SECRET_KEY: str = "your-secret-key-here"

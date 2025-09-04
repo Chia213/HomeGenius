@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLocale } from '../contexts/LocaleContext.tsx';
+import { useLocale } from '../contexts/LocaleContext';
 import { Globe, Check } from 'lucide-react';
 
 const LanguageSelector: React.FC = () => {
@@ -51,7 +51,7 @@ const LanguageSelector: React.FC = () => {
           {/* Dropdown */}
           <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 z-20">
             <div className="py-1">
-              {availableLocales.map((locale) => {
+              {availableLocales.map((locale: string) => {
                 const isSelected = locale === currentLocale;
                 return (
                   <button

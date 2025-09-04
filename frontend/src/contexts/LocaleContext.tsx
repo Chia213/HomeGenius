@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { LocaleConfig, getCurrentLocale, setLocale, locales } from '../utils/localization.ts';
+import { LocaleConfig, getCurrentLocale, setLocale, locales } from '../utils/localization';
 
 interface LocaleContextType {
   currentLocale: string;

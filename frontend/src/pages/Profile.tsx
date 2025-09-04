@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../contexts/AuthContext.tsx';
-import { useLocale } from '../contexts/LocaleContext.tsx';
+import { useAuth } from '../contexts/AuthContext';
+import { useLocale } from '../contexts/LocaleContext';
 import { User, Settings, Heart, Search, Brain } from 'lucide-react';
 
 const Profile: React.FC = () => {
@@ -8,7 +8,7 @@ const Profile: React.FC = () => {
   const { config } = useLocale();
   const [preferences, setPreferences] = useState({
     price_range: [0, 1000000],
-    property_types: [],
+    property_types: [] as string[],
     cities: [],
     preferred_styles: [],
     min_rooms: 1,

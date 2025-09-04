@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { useProperties } from '../contexts/PropertyContext.tsx';
-import PropertyCard from '../components/PropertyCard.tsx';
+import { useProperties } from '../contexts/PropertyContext';
+import PropertyCard from '../components/PropertyCard';
 import { Search, Filter, MapPin, Home, DollarSign } from 'lucide-react';
 
 const PropertySearch: React.FC = () => {
@@ -285,7 +285,7 @@ const PropertySearch: React.FC = () => {
           </div>
         ) : properties.length > 0 ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {properties.map((property) => (
+            {properties.map((property: any) => (
               <PropertyCard key={property.id} property={property} />
             ))}
           </div>

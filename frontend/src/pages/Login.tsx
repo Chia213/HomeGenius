@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext.tsx';
-import { useLocale } from '../contexts/LocaleContext.tsx';
+import { useAuth } from '../contexts/AuthContext';
+import { useLocale } from '../contexts/LocaleContext';
 import { Brain, Mail, Lock, Eye, EyeOff } from 'lucide-react';
 
 const Login: React.FC = () => {
   const { login } = useAuth();
-  const { getLocalizedText } = useLocale();
+  const { config } = useLocale();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: '',
