@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useProperties } from '../contexts/PropertyContext';
-import { useAuth } from '../contexts/AuthContext';
-import PropertyCard from '../components/PropertyCard';
+import { useProperties } from '../contexts/PropertyContext.tsx';
+import { useAuth } from '../contexts/AuthContext.tsx';
+import PropertyCard from '../components/PropertyCard.tsx';
 import { Search, Brain, TrendingUp, Star, ArrowRight } from 'lucide-react';
 
 const HomePage: React.FC = () => {

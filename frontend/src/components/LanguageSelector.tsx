@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLocale } from '../contexts/LocaleContext';
+import { useLocale } from '../contexts/LocaleContext.tsx';
 import { Globe, Check } from 'lucide-react';
 
 const LanguageSelector: React.FC = () => {

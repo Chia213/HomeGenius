@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { useProperties } from '../contexts/PropertyContext';
-import { aiApi } from '../services/api';
-import { Property, AIAnalysis } from '../types';
+import { useProperties } from '../contexts/PropertyContext.tsx';
+import { aiApi } from '../services/api.ts';
+import { Property, AIAnalysis } from '../types/index.ts';
 import { MapPin, Bed, Bath, Square, Calendar, ArrowLeft, Brain, TrendingUp, Star } from 'lucide-react';
 
 const PropertyDetail: React.FC = () => {

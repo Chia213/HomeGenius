@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { useProperties } from '../contexts/PropertyContext';
-import PropertyCard from '../components/PropertyCard';
+import { useProperties } from '../contexts/PropertyContext.tsx';
+import PropertyCard from '../components/PropertyCard.tsx';
 import { Search, Filter, MapPin, Home, DollarSign } from 'lucide-react';
 
 const PropertySearch: React.FC = () => {

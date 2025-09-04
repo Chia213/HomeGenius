@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
-import { useLocale } from '../contexts/LocaleContext';
+import { useAuth } from '../contexts/AuthContext.tsx';
+import { useLocale } from '../contexts/LocaleContext.tsx';
 import { Brain, Mail, Lock, Eye, EyeOff } from 'lucide-react';
 
 const Login: React.FC = () => {

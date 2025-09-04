@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../contexts/AuthContext';
-import { useLocale } from '../contexts/LocaleContext';
+import { useAuth } from '../contexts/AuthContext.tsx';
+import { useLocale } from '../contexts/LocaleContext.tsx';
 import { User, Settings, Heart, Search, Brain } from 'lucide-react';
 
 const Profile: React.FC = () => {

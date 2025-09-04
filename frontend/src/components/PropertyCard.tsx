@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Property } from '../types';
+import { Property } from '../types/index.ts';
 import { MapPin, Bed, Bath, Square, Star } from 'lucide-react';
-import { useLocale } from '../contexts/LocaleContext';
-import { formatPrice, formatArea, getLocalizedText } from '../utils/localization';
+import { useLocale } from '../contexts/LocaleContext.tsx';
+import { formatPrice, formatArea, getLocalizedText } from '../utils/localization.ts';
 
 interface PropertyCardProps {
   property: Property;
